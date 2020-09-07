@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tmrSpaceship = new System.Windows.Forms.Timer(this.components);
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.txtLives = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +55,8 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.BurlyWood;
+            this.PnlGame.Controls.Add(this.txtLives);
+            this.PnlGame.Controls.Add(this.label4);
             this.PnlGame.Controls.Add(this.lblScore);
             this.PnlGame.Controls.Add(this.label3);
             this.PnlGame.Controls.Add(this.label2);
@@ -66,6 +70,28 @@
             this.PnlGame.TabIndex = 0;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             this.PnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlGame_MouseDown);
+            // 
+            // txtLives
+            // 
+            this.txtLives.AutoSize = true;
+            this.txtLives.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLives.Location = new System.Drawing.Point(463, 639);
+            this.txtLives.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txtLives.Name = "txtLives";
+            this.txtLives.Size = new System.Drawing.Size(26, 29);
+            this.txtLives.TabIndex = 7;
+            this.txtLives.Text = "5";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(463, 606);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "lives";
             // 
             // lblScore
             // 
@@ -151,6 +177,8 @@
             // 
             // tmrPlanet
             // 
+            this.tmrPlanet.Enabled = true;
+            this.tmrPlanet.Interval = 1;
             this.tmrPlanet.Tick += new System.EventHandler(this.tmrPlanet_Tick);
             // 
             // tmrShoot
@@ -195,6 +223,8 @@
         private System.Windows.Forms.Timer tmrShoot;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label txtLives;
+        private System.Windows.Forms.Label label4;
     }
 }
 

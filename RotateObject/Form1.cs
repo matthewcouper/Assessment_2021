@@ -180,9 +180,29 @@ namespace RotateObject
             }
         }
 
+        private void CheckLives()
+        {
+            if (lives == 0)
+            {
+                tmrPlanet.Enabled = false;
+                tmrSpaceship.Enabled = false;
+                MessageBox.Show(" Game Over");
+            }
+        }
+
         private void tmrPlanet_Tick(object sender, EventArgs e)
         {
-            if (p.planetRec.IntersectsWith(spaceRec)) ;
+
+         
+            if (spaceship.spaceRec.IntersectsWith(planets.spaceRec))
+                {
+                    //reset back to top of panels
+                    planets.y = 30; // set y value of planetRec
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+            
         }
 
         private void tmrShoot_Tick(object sender, EventArgs e)
