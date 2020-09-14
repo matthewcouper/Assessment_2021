@@ -11,6 +11,7 @@ using System.Reflection;
 
 
 
+
 namespace RotateObject
 {
     public partial class Form1 : Form
@@ -26,6 +27,9 @@ namespace RotateObject
         string move;
 
         int score, lives;
+
+        Random yspeed = new Random();
+        Random xspeed = new Random();
 
         //declare a list  missiles from the Missile class
         List<Missile> missiles = new List<Missile>();
@@ -59,9 +63,8 @@ namespace RotateObject
         private void tmrSpaceship_Tick(object sender, EventArgs e)
         {
 
- 
 
-                if (turnRight)
+            if (turnRight)
             {
                 spaceship.rotationAngle += 5;
             }
@@ -115,6 +118,13 @@ namespace RotateObject
 
             foreach (PlanetRight p in planets3)
             {
+
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = xspeed.Next(1, 4);
+                p.x -= rndmspeed;
+
+
+
                 p.draw(g);//Draw the planet
                 p.movePlanet(g);//move the planet
 
@@ -129,8 +139,14 @@ namespace RotateObject
 
             foreach (Planet p in planets)
             {
+
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = xspeed.Next(1, 4);
+                p.x += rndmspeed;
+
                 p.draw(g);//Draw the planet
                 p.movePlanet(g);//move the planet
+
 
                 //if the planet reaches the bottom of the form relocate it back to the top
                 if (p.x >= ClientSize.Width)
@@ -143,6 +159,11 @@ namespace RotateObject
             
             foreach (PlanetDown p in planets2)
             {
+
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = yspeed.Next(1, 4);
+                p.y += rndmspeed;
+
                 p.draw(g);//Draw the planet
                 p.movePlanet(g);//move the planet
 
@@ -157,6 +178,11 @@ namespace RotateObject
 
             foreach (PlanetUp p in planets4)
             {
+
+                // generate a random number from 5 to 20 and put it in rndmspeed
+                int rndmspeed = yspeed.Next(1, 4);
+                p.y -= rndmspeed;
+
                 p.draw(g);//Draw the planet
                 p.movePlanet(g);//move the planet
 
@@ -186,24 +212,11 @@ namespace RotateObject
             {
                 tmrPlanet.Enabled = false;
                 tmrSpaceship.Enabled = false;
-                MessageBox.Show(" Game Over");
+                MessageBox.Show("think less next time.", " game over :(");
             }
         }
 
-        private void tmrPlanet_Tick(object sender, EventArgs e)
-        {
-
-         
-            if (spaceship.spaceRec.IntersectsWith(planets.spaceRec))
-                {
-                    //reset back to top of panels
-                    planets.y = 30; // set y value of planetRec
-                    lives -= 1;// lose a life
-                    txtLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
-                }
-            
-        }
+       
 
         private void tmrShoot_Tick(object sender, EventArgs e)
         {
@@ -297,6 +310,57 @@ namespace RotateObject
 
         }
 
+        private void tmrPlanet_Tick(object sender, EventArgs e)
+        {
+
+         foreach (Planet p in planets)
+
+            if (spaceship.spaceRec.IntersectsWith(p.planetRec))
+            {
+                //reset back to top of panels
+                p.x = -30; // set y value of planetRec
+                lives -= 1;// lose a life
+                txtLives.Text = lives.ToString();// display number of lives
+                CheckLives();
+            }
+
+            foreach (PlanetDown p in planets2)
+
+                if (spaceship.spaceRec.IntersectsWith(p.planetRec))
+                {
+                    //reset back to top of panels
+                    p.y = -20; // set y value of planetRec
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+
+            foreach (PlanetRight p in planets3)
+
+                if (spaceship.spaceRec.IntersectsWith(p.planetRec))
+                {
+                    //reset back to top of panels
+                    p.x = 600; // set y value of planetRec
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+
+            foreach (PlanetUp p in planets4)
+
+                if (spaceship.spaceRec.IntersectsWith(p.planetRec))
+                {
+                    //reset back to top of panels
+                    p.y = 500; // set y value of planetRec
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+
+           
+
+        }
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Left) { turnLeft = false; }
@@ -320,9 +384,10 @@ namespace RotateObject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("dont think. just shoot.", "the rules are simple:");
+            MessageBox.Show("dont think. just shoot. \n \n (wasd to move, arrows to rotate, e to shoot)", "the rules are simple:");
             txtName.Focus();
 
+            lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
 
         }
 

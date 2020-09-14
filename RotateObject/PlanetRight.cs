@@ -37,7 +37,7 @@ namespace RotateObject
         }
         public void movePlanet(Graphics g)
         {
-            x += -5;
+           
             planetRec.Location = new Point(x, y);
 
         }

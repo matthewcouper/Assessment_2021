@@ -26,8 +26,8 @@ namespace RotateObject
 
         public Spaceship()
         {
-            x = 10;
-            y = 360;
+            x = 210;
+            y = 220;
             width = 25;
             height = 25;
             rotationAngle = 0;
