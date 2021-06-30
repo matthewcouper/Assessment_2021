@@ -14,7 +14,7 @@ using System.Reflection;
 
 namespace RotateObject
 {
-    public partial class Form1 : Form
+    public partial class DTJS1 : Form
     {
 
 
@@ -40,7 +40,7 @@ namespace RotateObject
 
 
 
-        public Form1()
+        public DTJS1()
         {
             InitializeComponent();
 
@@ -375,6 +375,14 @@ namespace RotateObject
         {
             txtName.Enabled = false;
             tmrSpaceship.Enabled = true;
+            label1.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+            label9.Visible = false;
+             
+
         }
 
         private void MnuStop_Click(object sender, EventArgs e)
