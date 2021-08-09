@@ -21,6 +21,7 @@ namespace RotateObject
 
         Graphics g; //declare a graphics object called g so we can draw on the Form
         Spaceship spaceship = new Spaceship(); //create an instance of the Spaceship Class called spaceship
+        LifeSprite lifesprite = new LifeSprite(); //create an instance of the LifeSprite Class called spaceship
 
         bool turnLeft, turnRight, moveUp, moveLeft, moveRight, moveDown;
 
@@ -31,12 +32,18 @@ namespace RotateObject
         Random yspeed = new Random();
         Random xspeed = new Random();
 
+        //declare a random variable so the lifesprite graphic is drawn at random on the panel when game starts/when collided
+        Random rand = new Random();
+
+
         //declare a list  missiles from the Missile class
         List<Missile> missiles = new List<Missile>();
         List<Planet> planets = new List<Planet>();
         List<PlanetDown> planets2 = new List<PlanetDown>();
         List<PlanetRight> planets3 = new List<PlanetRight>();
         List<PlanetUp> planets4 = new List<PlanetUp>();
+
+       
 
 
 
@@ -193,7 +200,8 @@ namespace RotateObject
                 }
 
             }
-
+            //Draw the lifesprite
+            lifesprite.drawLifeSprite(g);
 
             //Draw the spaceship
             spaceship.drawSpaceship(g);
@@ -212,6 +220,7 @@ namespace RotateObject
             {
                 tmrPlanet.Enabled = false;
                 tmrSpaceship.Enabled = false;
+                tmrTime.Enabled = false;
                 MessageBox.Show("think less next time.", " game over :(");
             }
         }
@@ -310,6 +319,35 @@ namespace RotateObject
 
         }
 
+        private void tmrTime_Tick(object sender, EventArgs e)
+        {
+            int timeLeft = int.Parse(lblTime.Text);  //getting the last value (the one from the label)
+            timeLeft -= 1; //subtracting 1
+            lblTime.Text = timeLeft.ToString();  //adding it back to the label. 
+
+            if (int.Parse(lblTime.Text) == 0)  //if the countdown reaches '0', we stop it
+            {
+                tmrTime.Stop();
+                tmrPlanet.Enabled = false;
+                tmrSpaceship.Enabled = false;
+                MessageBox.Show("think less next time.", " game over :(");
+            }
+
+            if (spaceship.spaceRec.IntersectsWith(lifesprite.lifespriteRec))
+            {
+
+
+                lifesprite.x = rand.Next(450);
+                lifesprite.y = rand.Next(350);
+
+                
+                timeLeft += 5; //adding 5
+                lblTime.Text = timeLeft.ToString();  //adding it back to the label. 
+            }
+
+
+        }
+
         private void tmrPlanet_Tick(object sender, EventArgs e)
         {
 
@@ -381,13 +419,15 @@ namespace RotateObject
             label7.Visible = false;
             label8.Visible = false;
             label9.Visible = false;
-             
+            tmrTime.Enabled = true;
 
         }
 
         private void MnuStop_Click(object sender, EventArgs e)
         {
             tmrSpaceship.Enabled = false;
+            tmrTime.Enabled = false;
+            tmrPlanet.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)

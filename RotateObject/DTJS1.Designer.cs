@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tmrSpaceship = new System.Windows.Forms.Timer(this.components);
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,6 +50,7 @@
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.tmrShoot = new System.Windows.Forms.Timer(this.components);
+            this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.PnlGame.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +63,8 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.BurlyWood;
+            this.PnlGame.Controls.Add(this.lblTime);
+            this.PnlGame.Controls.Add(this.label10);
             this.PnlGame.Controls.Add(this.label9);
             this.PnlGame.Controls.Add(this.label8);
             this.PnlGame.Controls.Add(this.label7);
@@ -79,6 +84,26 @@
             this.PnlGame.TabIndex = 0;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             this.PnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlGame_MouseDown);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(214, 415);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(29, 19);
+            this.lblTime.TabIndex = 14;
+            this.lblTime.Text = "10";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(193, 394);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 19);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "time left";
             // 
             // label9
             // 
@@ -240,6 +265,11 @@
             this.tmrShoot.Interval = 1;
             this.tmrShoot.Tick += new System.EventHandler(this.tmrShoot_Tick);
             // 
+            // tmrTime
+            // 
+            this.tmrTime.Interval = 1000;
+            this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
+            // 
             // DTJS1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +312,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Timer tmrTime;
+        private System.Windows.Forms.Label lblTime;
     }
 }
 

@@ -52,6 +52,7 @@
     <Compile Include="DTJS1.Designer.cs">
       <DependentUpon>DTJS1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LifeSprite.cs" />
     <Compile Include="Missiles.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="PlanetDown.cs" />
@@ -97,6 +98,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dot8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lifesprite.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
