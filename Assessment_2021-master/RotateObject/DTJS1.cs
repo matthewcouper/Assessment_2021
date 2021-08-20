@@ -27,6 +27,8 @@ namespace RotateObject
 
         string move;
 
+        string playerName;
+
         int score, lives;
 
         Random yspeed = new Random();
@@ -127,7 +129,7 @@ namespace RotateObject
             {
 
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = xspeed.Next(1, 4);
+                int rndmspeed = xspeed.Next(1, 2);
                 p.x -= rndmspeed;
 
 
@@ -148,7 +150,7 @@ namespace RotateObject
             {
 
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = xspeed.Next(1, 4);
+                int rndmspeed = xspeed.Next(1, 2);
                 p.x += rndmspeed;
 
                 p.draw(g);//Draw the planet
@@ -168,7 +170,7 @@ namespace RotateObject
             {
 
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = yspeed.Next(1, 4);
+                int rndmspeed = yspeed.Next(1, 2);
                 p.y += rndmspeed;
 
                 p.draw(g);//Draw the planet
@@ -187,7 +189,7 @@ namespace RotateObject
             {
 
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = yspeed.Next(1, 4);
+                int rndmspeed = yspeed.Next(1, 2);
                 p.y -= rndmspeed;
 
                 p.draw(g);//Draw the planet

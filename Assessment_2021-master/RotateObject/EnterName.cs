@@ -35,10 +35,10 @@ namespace RotateObject
                 //if playerName valid (only letters) 
                 MessageBox.Show("Starting");
 
-                DTJS1 newform = new DTJS1();
-                this.Hide();
-                newform.ShowDialog();
-                this.Show();
+              
+                DTJS1 DTJS12 = new DTJS1();
+                Hide();
+                DTJS12.ShowDialog();
 
             }
             else

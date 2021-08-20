@@ -46,10 +46,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MnuStart = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.tmrShoot = new System.Windows.Forms.Timer(this.components);
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -221,14 +221,12 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.BurlyWood;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuStart,
             this.MnuStop});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(710, 29);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
@@ -249,6 +247,17 @@
             this.MnuStop.Text = "stop";
             this.MnuStop.Click += new System.EventHandler(this.MnuStop_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::RotateObject.Properties.Resources.NicePng_half_circle_png_932398;
+            this.pictureBox1.Location = new System.Drawing.Point(547, 561);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(163, 131);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // tmrPlanet
             // 
             this.tmrPlanet.Enabled = true;
@@ -266,17 +275,6 @@
             this.tmrTime.Interval = 1000;
             this.tmrTime.Tick += new System.EventHandler(this.tmrTime_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::RotateObject.Properties.Resources.NicePng_half_circle_png_932398;
-            this.pictureBox1.Location = new System.Drawing.Point(547, 561);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 131);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
             // DTJS1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -287,7 +285,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "DTJS1";
-            this.Text = "level one";
+            this.Text = "dt.js: the second installment";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
