@@ -222,6 +222,10 @@ namespace RotateObject
                 tmrSpaceship.Enabled = false;
                 tmrTime.Enabled = false;
                 MessageBox.Show("think less next time.", " game over :(");
+
+                HSCheck HSCheck2 = new HSCheck();
+                Hide();
+                HSCheck2.ShowDialog();
             }
         }
 
@@ -331,6 +335,11 @@ namespace RotateObject
                 tmrPlanet.Enabled = false;
                 tmrSpaceship.Enabled = false;
                 MessageBox.Show("think less next time.", " game over :(");
+
+                HSCheck HSCheck2 = new HSCheck();
+                Hide();
+                HSCheck2.ShowDialog();
+
             }
 
             if (spaceship.spaceRec.IntersectsWith(lifesprite.lifespriteRec))

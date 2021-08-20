@@ -58,6 +58,19 @@
     <Compile Include="EnterName.Designer.cs">
       <DependentUpon>EnterName.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHighScores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHighScores.Designer.cs">
+      <DependentUpon>FrmHighScores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HighScores.cs" />
+    <Compile Include="HSCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HSCheck.Designer.cs">
+      <DependentUpon>HSCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="LifeSprite.cs" />
     <Compile Include="Missiles.cs" />
     <Compile Include="Planet.cs" />
@@ -72,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnterName.resx">
       <DependentUpon>EnterName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHighScores.resx">
+      <DependentUpon>FrmHighScores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HSCheck.resx">
+      <DependentUpon>HSCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,3 +9,5 @@ C:\Users\matth\Desktop\Assessment_2021-master\RotateObject\obj\Debug\DTJS.csproj
 C:\Users\matth\Desktop\Assessment_2021-master\RotateObject\obj\Debug\RotateObject.exe
 C:\Users\matth\Desktop\Assessment_2021-master\RotateObject\obj\Debug\RotateObject.pdb
 C:\Users\matth\Desktop\Assessment_2021-master\RotateObject\obj\Debug\RotateObject.EnterName.resources
+C:\Users\matth\Desktop\Assessment_2021-master\RotateObject\obj\Debug\RotateObject.FrmHighScores.resources
+C:\Users\matth\Desktop\Assessment_2021-master\RotateObject\obj\Debug\RotateObject.HSCheck.resources
